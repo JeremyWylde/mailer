@@ -8,6 +8,10 @@ const server = require('http').Server(app);
 
 const urlencodedParser = bodyParser.urlencoded({extended: false});
 
+app.get('/', (req,res) => {
+    res.send('Hello World!');
+});
+
 app.post("/", urlencodedParser, function (req, res) {
     if (!req.body)
         return res.sendStatus(400);
@@ -37,7 +41,9 @@ app.post("/", urlencodedParser, function (req, res) {
     });
 });
 
-server.listen('https://git.heroku.com/jeremywyldemailerapp.git', (err)=>{
+let port = process.env.PORT || 3010;
+
+server.listen(port, (err)=>{
     if(err){
         throw Error(err);
     }
