@@ -12,7 +12,7 @@ app.get('/', (req,res) => {
     res.send('Hello World!');
 });
 
-app.post("/", urlencodedParser, function (req, res) {
+app.post("/sentmessage", urlencodedParser, function (req, res) {
     if (!req.body)
         return res.sendStatus(400);
 
