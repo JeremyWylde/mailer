@@ -39,6 +39,8 @@ app.post('/sentmessage', urlencodedParser, function (req, res) {
             console.log('Email sent');
         }
     });
+
+    res.send(req.body);
 });
 
 let port = process.env.PORT || 3010;
