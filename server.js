@@ -40,7 +40,9 @@ app.post('/sentmessage', urlencodedParser, function (req, res) {
         }
     });
 
-    res.send(req.body);
+    res.send(()=>{
+        alert('Сообщение успешно отправлено')});
+        res.redirect('https://jeremywylde.github.io/portfolio');
 });
 
 let port = process.env.PORT || 3010;
