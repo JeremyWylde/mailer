@@ -28,8 +28,8 @@ app.post('/sentmessage', urlencodedParser, function (req, res) {
         from: 'jeremywyldejw@gmail.com',
         to: 'ammotx@gmail.com',
         subject: 'Someone send u a message',
-        text: `name: ${req.body.name} email: ${req.body.email} 
-        message: ${req.body.message}`
+        text: `name: ${req.name} email: ${req.email} 
+        message: ${req.message}`
     };
 
     transporter.sendMail(mailOption, (err, data) => {
